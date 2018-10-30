@@ -8,10 +8,13 @@ function startTimer(speed)
 //调用定时器，使程序从一开始就执行变化
 startTimer(1000);
 
-//获取h2元素
-var h2Obj = document.querySelector('h2');
-var imgObj=document.querySelector('h2>img');
-console.log(imgObj);
+//获取div#images元素
+var images1 = document.querySelector('#images');
+var images2 = document.getElementById('images');
+console.log(images1);
+console.log(images2);
+console.log(images2.children[3]);
+// images2.children[4].style.
 //设置当前变化的号码变量及初值
 var currentNo = 0; 
 // var flag = true;      
@@ -21,7 +24,7 @@ function changeNum() {
 
     if (currentNo < 8) currentNo++;
     else currentNo = 1;
-    h2Obj.innerHTML='<img src="images/0'+currentNo+'.jpg "alt=""></img>';
+    // h2Obj.innerHTML='<img src="images/0'+currentNo+'.jpg "alt=""></img>';
     //h2Obj.textContent = currentNo;//节点文本内容
     console.log(currentNo);
 }

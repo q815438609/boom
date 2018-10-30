@@ -101,4 +101,26 @@ ul{
     text-align: center;
     font-weight: bold;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#images{
+    position: relative;
+}
+
+#images>a{
+    transition: opacity 1s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.displayImg{
+    /* display: block; */
+    opacity: 1;
+}
+.hiddenImg{
+    /* display: none; */
+    opacity: 0;
 }
