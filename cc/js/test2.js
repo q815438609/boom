@@ -13,57 +13,63 @@
 
 //获取一组带超链接的图像
 var imagesA=document.getElementById("images").children;
-console.log(imagesA);
 
-// //行内样式实现更换显示样式
-// //26行元素隐藏
+//获取一组文本
+var txtList=document.querySelectorAll(".txt-box>li")
+
+
+
+// console.log(imagesA);
+
+
+//通过更换CCSS类名来实现
+//26行隐藏
 // imagesA[0].style.display="none";
-// //30行元素显示
-// imagesA[4].style.display="inlineblock"; 
+// //30行显示
+// imagesA[4].style.display="block";
 
-
-//通过更换CSS类名来实现更换显示样式
-
-//26行元素隐藏
-imagesA[0].className="hiddenImg";
-//30行元素显示
-imagesA[4].className="displayImg"
-
-//利用计时器间隔1S，显示1张图像，其余图像隐藏。
+//利用计时器间隔1s,显示1张图像，其余图像隐藏
 var currentNo=0;
-function changeImg(){
-    //排除原理，先去掉同类
-    for(var i=0;i<imagesA.length;i++){
-        imagesA[i].className="hiddenImg";
-    }
-    //或者
-    // for(const item of imagesA){
-    //     item.className="hiddenImg";
-    // }
+function changeImg()
+{
+//排他原理，先去掉同类，再突出自己
+
+  for(var i=0;i<imagesA.length;i++)
+  {
+      imagesA[i].className="hiddenImg";
+      txtList[i].className="txtItem normalColor";
+
+    //   console.log(imagesA[i]);
+  }
+ 
 
     //再突出自己
-     imagesA[currentNo].className="displayImg"
+    imagesA[currentNo].className="displayImg";
+    txtList[currentNo].className="txtItem heighlightColor";
 
-     //换个元素，为下一次计时器调用做准备
-     if(currentNo<7) {currentNo++;} 
-     else{
-         currentNo=0;
-     }
+    //换个元素，为下一个计时器调用做准备
+    if(currentNo<7){currentNo++;}
+    else{currentNo=0;}
+
+    // console.log(currentNo);
+
 }
-
 var timer=window.setInterval(changeImg,1000)
 
-var imagesG=document.querySelector('#images');
+//定时器移入移出暂停启动按钮
 
-function starChange(){
+function stopChange()
+{
+    window.clearInterval(timer)
+}
+function startChange()
+{
     timer=window.setInterval(changeImg,1000);
 }
+var imagesDiv=document.getElementById("images");
+console.log(imagesDiv);
+imagesDiv.addEventListener('mouseover',stopChange);
+imagesDiv.addEventListener('mouseout',startChange);
 
-function stopChange(){
-    window.clearInterval(timer);
-}
-
-imagesG.addEventListener('mouseover',stopChange);
-imagesG.addEventListener('mouseout',starChange);
 
 

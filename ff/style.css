@@ -104,19 +104,16 @@ ul{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 #images{
     position: relative;
-
 }
-
 #images>a{
     transition: opacity 1s linear;
+    /* display: block; */
     position: absolute;
     top: 0;
     left: 0;
 }
-
 .displayImg{
     /* display: block; */
     opacity: 1;
@@ -128,6 +125,8 @@ ul{
 img{
     transition: opacity 1s linear;
     opacity: 1;
+    width: 100%;
+    height: 300px;
 }
 .slider{
     width: 1500px;
@@ -137,15 +136,12 @@ img{
     overflow: hidden;
 }
 
-.slider img{
-    display: block;
-}
 .btn{
     position: absolute;
     top: 50%;
     width: 60px;
     height: 30px;
-    background: black;
+    background-color: #000;
     opacity: 0.3;
     color: #fff;
     cursor: pointer;
@@ -153,20 +149,17 @@ img{
     line-height: 30px;
     background-position: center;
 }
-
 .rightButton{
     right: 20px;
 }
-
 .leftButton{
-    left: 20px;
+    left: 10px;
 }
-
-.txt-box{
-    width: 100%;
-    /* background-color: #000; */
-    /* opacity: 0.3; */
+.zyx-box{
+    width: 100%; 
     height: 5px;
+    /* opacity: 0.5; */
+    /* background-color:#333;  */
     position: absolute;
     left: 0;
     bottom: 0;
@@ -174,28 +167,38 @@ img{
     z-index: 5;
     transition: height 0.1s linear 0s;
 }
-
-.txt-box:hover{
+.zyx-box:hover{
     height: 40px;
 }
-
-.txtItem{
-    width: 12.5%;
-    background-color: #333;
-    margin-right: 2px;
-    color: #fff;
-    text-align: center;
+.zyx-box li{
+           width: 12.5%;
+           background: #333;
+           margin-right:2px ;
+           color: #fff;
+           text-align: center;
 }
-
-.txt-box li:hover,.heightlightColor{
-    background-color: rgb(252, 164, 2);
+.zyx-box li:hover{
+    background-color: green;
+    opacity: 1;
 }
-
-.txt-box :last-child{
+.zyx-box：last-child{
     margin: 0;
 }
+/* .zyx:hover{
+    background-color: green;
+    opacity: 1;
 
-
-.normalColor{
-    background-color: rgba(0,0,0,0.5);
 }
+
+.currentTxt{
+    background-color: green;
+    opacity: 1;
+}
+
+
+.zyx span{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+}  */

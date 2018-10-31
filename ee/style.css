@@ -104,19 +104,16 @@ ul{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 #images{
     position: relative;
-
 }
-
 #images>a{
     transition: opacity 1s linear;
+    /* display: block; */
     position: absolute;
     top: 0;
     left: 0;
 }
-
 .displayImg{
     /* display: block; */
     opacity: 1;
@@ -124,78 +121,4 @@ ul{
 .hiddenImg{
     /* display: none; */
     opacity: 0;
-}
-img{
-    transition: opacity 1s linear;
-    opacity: 1;
-}
-.slider{
-    width: 1500px;
-    height: 300px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-.slider img{
-    display: block;
-}
-.btn{
-    position: absolute;
-    top: 50%;
-    width: 60px;
-    height: 30px;
-    background: black;
-    opacity: 0.3;
-    color: #fff;
-    cursor: pointer;
-    text-align: center;
-    line-height: 30px;
-    background-position: center;
-}
-
-.rightButton{
-    right: 20px;
-}
-
-.leftButton{
-    left: 20px;
-}
-
-.txt-box{
-    width: 100%;
-    /* background-color: #000; */
-    /* opacity: 0.3; */
-    height: 5px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    z-index: 5;
-    transition: height 0.1s linear 0s;
-}
-
-.txt-box:hover{
-    height: 40px;
-}
-
-.txtItem{
-    width: 12.5%;
-    background-color: #333;
-    margin-right: 2px;
-    color: #fff;
-    text-align: center;
-}
-
-.txt-box li:hover,.heightlightColor{
-    background-color: rgb(252, 164, 2);
-}
-
-.txt-box :last-child{
-    margin: 0;
-}
-
-
-.normalColor{
-    background-color: rgba(0,0,0,0.5);
 }
